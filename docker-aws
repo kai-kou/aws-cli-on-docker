@@ -1,0 +1,9 @@
+#!/bin/bash
+docker run -it --rm \
+  -v $HOME/.aws:$HOME/.aws \
+  -v $PWD:$PWD \
+  -e "HOME=$HOME" \
+  -w $PWD \
+  --entrypoint=aws \
+  aws-cli \
+  $*
